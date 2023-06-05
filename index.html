@@ -1,25 +1,43 @@
 <!DOCTYPE html
-     
+    
 
-<!DOCTYPE html>
 <html>
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-div.container {
-    width: 100%;
+body {
+  font-family: "Lato", sans-serif;
+} 
 
+
+
+
+.sidenav {
+  height: 100%;
+  width: 160px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #333;
+  overflow-x: hidden;
+  padding: 20px 20px 20px 20px;
+  text-align: center;
+  
 }
 
-header {
-    padding: 3em;
-    color: white;
-    background-color: black;
-    clear: left;
-    text-align: center;
+
+
+.main {
+  margin-left: 200px; /* Same as the width of the sidenav */
+  font-size: 22 px; /* Increased text to enable scrolling */
+  padding: 20px 20px;
 }
 
 
-footer {
+
+
+.footer {
     padding: 1em;
     color: white;
     background-color: black;
@@ -28,61 +46,149 @@ footer {
 }
 
 
-aside {
-    float: left;
-    max-width: 300px;
-    margin-left: 2em;
-    padding: 1em;
+
+.header {
+  overflow: hidden;
+  background-color: #333;
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%; /* Full width */
+  height: 70;
+  margin-left: -30px; /* Same as the width of the sidenav */;
 }
 
 
-section {
-    margin-left: 400px;
-    border-left: 1px solid gray;
-    padding: 1em;
+.header a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 30px 16px;
+  text-decoration: none;
 }
 
-article {
-    float: left;
-    margin: 0;
-    padding: 2em;
+/* Change background on mouse-over */
+.header a:hover {
+  background: #ddd;
+  color: black;
 }
 
+/* Main content */
+.main {
+  margin-top: -60px; /* Add a top margin to avoid content overlay */
+}
+
+
+
+
+
+.image-cropper {
+
+  width: 140px;
+
+  height: 140px;
+
+  position: relative;
+
+  overflow: hidden;
+
+  border-radius: 50%;
+
+}
+
+.image-cropper__image {
+
+  display: inline;
+
+  margin: 0 auto;
+
+  height: 100%;
+
+  min-width: 100%;
+
+}
+
+
+
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+}
 </style>
 </head>
 <body>
 
-<div class="container">
+<div class="image-cropper">
+  <img src="#" class="image-cropper__image">
+</div>
 
 
-<header>
-   <h1></h1>
+
+
+
+
+<div class="sidenav">
+<div class="image-cropper">
+<img src="./dataWebsite/Daniela_PamplonaPicture.png"  class="image-cropper__image" />
+</div>
+<p style="font-size:18px; color:green"><b>Daniela Pamplona</b></p>
+<a href=http://www.lissi.fr/home/"  style="color:green;text-decoration: none" >Laboratoire Images, Signaux et Systèmes Intelligents<br />Université Paris Est - Créteil<br/>
+ FRANCE </p> 
+<a href="mailto:daniela.pamplona@mail.fr"> <img src="./dataWebsite/envelope.png" style="width:32px;height:32px;"></a>
+<p </p> 
+<a href="https://goo.gl/maps/TFSTUj49rmqa8ymE7">
+<img src="./dataWebsite/location.png" style="width:32px;height:32px;">
+</a>
+<p </p> 
+<a href="https://scholar.google.fr/citations?user=W6LgopgAAAAJ&hl=en">
+<img src="./dataWebsite/google-scholar-profile.png" style="width:32px;height:32px;">
+</a>
+<p </p> 
+    <a
+    id="cy-effective-orcid-url"
+    class="underline"
+     href="https://orcid.org/0000-0002-7843-8526"
+     target="orcid.widget"
+     rel="me noopener noreferrer"
+     style="vertical-align: top">
+     <img
+        src="./dataWebsite/orcid-profile.png"
+        style="width: 32px;
+        alt="ORCID iD icon"/>
+    </a>
+</div>
+
+
+
+<div class="main">
+
+<header id="header">
+	<nav class="header" style="--items: 5;">
+		<a href="#About">About</a>
+		<a href="#Research Interests">Research Interests</a>
+		<a href="#Articles">Articles </a>
+		<a href="#Abstracts">Abstracts</a>
+        <a href="#Teaching">Teaching</a>
+        <a href="#Projects">Projects</a>
+		<span class="line"></span>
+	</nav>
 </header>
 
-<aside>
-<img src="./dataWebsite/Daniela_PamplonaPicture.png" style="width:300px;height:300px;" alt="" />
-</aside>
 
 
-
-<section>
-<p style="font-size:34px"><b>Daniela Pamplona</b></p>
-<p style="font-size:22px">daniela.pamplona@ensta.fr</p>
-<p style="font-size:22px">U2IS, ENSTA-Paristech</p>
-<p style="font-size:22px">828 Boulevard des Mar&eacute;chaux </p>
-<p style="font-size:22px">91120 Palaiseau, FRANCE</p>
-</section>
-
-
-
-<article>
-		<!--  Text: [begin] -->
-			<p style="font-size:20px" class="bodytext"> I have graduated from Instituto Superior Tecnico, Portugal in Applied Mathematics and Computation both Bachelor and Master levels.</p>
-<p style="font-size:20px" class="bodytext">My master thesis was taken at the Vislab - Computer and Vision Lab, Institute for Systems and Robotics, with <a href="http://users.isr.ist.utl.pt/~alex/pmwiki/index.php" title="Opens external link in new window" target="_blank" class="external-link-new-window" > Alexandre Bernardino</a> in space variant vision. We developed a new method to implement and manipulate foveated images, i.e. images with higher resolution in the center than in the periphery of the field of view (as in the primate eye, where retinal image has higher resolution in the fovea).</p>
-<p style="font-size:20px" class="bodytext">From 2009 to 2014, I was a PhD candidate at the Frankfurt Institute for Advanced Studies. I was working with <a href="http://fias.uni-frankfurt.de/~rothkopf/" title="Opens external link in new window" target="_blank" class="external-link-new-window" >Constantin Rothkopf</a>&nbsp; and <a href="http://fias.uni-frankfurt.de/~triesch/" title="Opens external link in new window" target="_blank" class="external-link-new-window" > Jochen Triesch </a>on the modeling the variability of Retinal Ganglion Cells directly from the statistics of naturalistic images across the field of view. </p>
-<!--<p style="font-size:20px" class="bodytext">In the scope of my PhD studies, we developed a method that transform the usual planar images into spherical ones, that mimic better the imaging process of the human eye, and studied their local statistics. We verified that the assumption of shift invariance is not globally correct. Under the ecological approach, we estimated optimal encoders of these images and predict properties of the receptive fields of retinal ganglion cells. </p>-->
-
-<p style="font-size:20px" class="bodytext"> From 2014 to 2016, I was a postdoc
+<div id="About">
+<p style="font-size:20px; color:green">About</p>
+I am a computer science researcher with a focus on vision in a broad sense. I cherish biological and artificial perspectives of embodied vision and coaction between these two research fields. I have been affiliated with neuroscience modeling along with robotics labs in Portugal, Germany, and France. Consequently, my work spans from spiking data analysis to visual context classification. My latest work is in collaboration with  <a href ="
+http://perso.ensta-paristech.fr/~manzaner/"  title="Opens external
+link in new window" target="_blank" class="external-link-new-window" >Antoine
+Manzanera</a>. We are working on lifelong learning of visual representations, particularly in the problems of incremental learning and curiosity. I am also a lecturer in computer vision, specializing in biomedical signals, at the University of Paris-Est Creteil.
+</div>
+<!--
+<p> I have graduated from Instituto Superior Tecnico, Portugal in Applied Mathematics and Computation both Bachelor and Master levels.</p>
+<p>My master thesis was taken at the Vislab - Computer and Vision Lab, Institute for Systems and Robotics, with <a href="http://users.isr.ist.utl.pt/~alex/pmwiki/index.php" title="Opens external link in new window" target="_blank" class="external-link-new-window" > Alexandre Bernardino</a> in space variant vision. We developed a new method to implement and manipulate foveated images, i.e. images with higher resolution in the center than in the periphery of the field of view (as in the primate eye, where retinal image has higher resolution in the fovea).</p>
+<p>From 2009 to 2014, I was a PhD candidate at the Frankfurt Institute for Advanced Studies. I was working with <a href="http://fias.uni-frankfurt.de/~rothkopf/" title="Opens external link in new window" target="_blank" class="external-link-new-window" >Constantin Rothkopf</a>&nbsp; and <a href="http://fias.uni-frankfurt.de/~triesch/" title="Opens external link in new window" target="_blank" class="external-link-new-window" > Jochen Triesch </a>on the modeling the variability of Retinal Ganglion Cells directly from the statistics of naturalistic images across the field of view. </p>
+<p>In the scope of my PhD studies, we developed a method that transform the usual planar images into spherical ones, that mimic better the imaging process of the human eye, and studied their local statistics. We verified that the assumption of shift invariance is not globally correct. Under the ecological approach, we estimated optimal encoders of these images and predict properties of the receptive fields of retinal ganglion cells. </p>
+<p> From 2014 to 2016, I was a postdoc
 at the Biovision team, INRIA Sophia Antipolis, working with <a
 href="http://www-sop.inria.fr/members/Pierre.Kornprobst/" title="Opens external
 link in new window" target="_blank" class="external-link-new-window" >Pierre
@@ -93,45 +199,32 @@ methods for analysing (retinal) spiking data. At the single cell level, we have
 proposed a new stimulus for an efficient estimation of receptive fields, the
 shifted stimulus. At the population level, we worked in a method that assuming a leaky-integrate-and-fire model it learns the population connectivity from an empirical raster.</p>
 
-
-<p style="font-size:20px" class="bodytext"> Since 2017, I am a postdoc at U2IS,
+<p> Since 2017, I am a postdoc at U2IS,
 ENSTA-ParisTech, working with <a href ="
 http://perso.ensta-paristech.fr/~manzaner/"  title="Opens external
 link in new window" target="_blank" class="external-link-new-window" >Antoine
 Manzanera</a>. We are working in life long learning of visual
 representations, particularly in the problems of incremental learning and
 curiosity. </p>
+-->
 
-<p style="font-size:20px" class="bodytext"> 
-We are looking for interns, master students and PhD students. If you would like
-to work with me and Antoine Manzanera, whether you have an idea or not, just
-send me an informal email with your research interests and your availability. 
-A list of possible projects is available in the bottom of the website.
+<div id="Research Interests">
+<p style="font-size:20px; color:green">Research Interests</p>
+<p><i>Unsupervised Learning, incremental learning, probabilistic models, information theory, attention, front-vision, retina, ecology, vision, sensory coding, embodyment, perception, intelligent systems, decision making.</i></p>
+<p>&nbsp;</p>
+</div>
+
+<div id="Articles">
+<p style="font-size:20px; color:green">Articles</p>
+
+<!--
 </p>
-
-
-</article>
-<article>
-<p style="font-size:20px; color:green" class="bodytext">Research Interests</p>
-<p style="font-size:20px" class="bodytext"><i>Unsupervised Learning, Incremental
-learning, probabilistic models, information theory, attention, front-vision, Retina, ecology, vision, sensory coding, embodyment, perception, intelligent systems, decision making.</i></p>
-<p style="font-size:20px" class="bodytext">&nbsp;</p>
-
-
-<p style="font-size:20px; color:green" class="bodytext">Journal Publications
-</p>
-
-
-</p>
-<p style="font-size:20px" class="bodytext">
+<p>
 Pamplona, D.; Rothkopf, C. A.; All different all equal: ecology and the eye's
 optics explain P-ganglion cells' anisotropies, under preparation
 </p>
-
-
-
-</p>
-<p style="font-size:20px" class="bodytext">
+-->
+<p>
 Pamplona, D.; Hilgen, G.; Hennig, M.; Cessac, B.; Sernagor, E.; Kornprobst P.;
 <a
 href = "https://journals.physiology.org/doi/full/10.1152/jn.00076.2021"
@@ -143,9 +236,13 @@ Receptive field estimation in large visual neuron assemblies using a super-resol
  </a>
 </p>
 
-
+<p>
+Pamplona, D; Manzanera A.; <a
+href="https://hal.archives-ouvertes.fr/hal-03012909/document/" title="Opens external link in new window" target="_blank"class="external-link-new-window">
+Naturally Constrained Online Expectation Maximization</a></i>,International Conference on Pattern Recognition (ICPR), 2020 <a href="./dataWebsite/Pamplona_Manzanera_Naturally_Constrained_Online_Expectation_Maximization_Poster.pdf" download>Poster</a>
 </p>
-<p style="font-size:20px" class="bodytext">
+
+<p>
 Cessac, B; Kornprobst, P.; Kraria, S.; Nasser, H.; Pamplona, D.; Portelli, G.;
 Vieville T.
 <a
@@ -156,9 +253,7 @@ PRANAS: A New Platform for Retinal Analysis and Simulation,
 </a>Frontiers NeuroInformatics, 2017
 </p>
 
-
-</p>
-<p style="font-size:20px" class="bodytext">Hilgen, G.; Pirmoradian, S.;
+<p>Hilgen, G.; Pirmoradian, S.;
 Pamplona, D.; Kornprobst, P.; Cessac, B.; Hennig, M.H.; Sernagor E.; <a
 href="https://www.nature.com/articles/srep42330"
 title="Opens external link in new window" target="_blank"
@@ -167,73 +262,77 @@ Responses from Ganglion Cells in the Developing Mouse Retina,</a>Scientific Repo
 2017
 </p>
 
-</p>
-<p style="font-size:20px" class="bodytext">Pamplona, D.; Triesch, J.;
+<p>Pamplona, D.; Triesch, J.;
 Rothkopf,C. A. ;<a
 href="http://www.sciencedirect.com/science/article/pii/S0042698913000242"
 title="Opens external link in new window" target="_blank"
 class="external-link-new-window" > Power spectra of the natural input to the
 visual system</a>, Vision Research, 2013 <a href="./dataWebsite/SourceCodePamplonaetal2013.zip" download>Download code</a>
 </p>
-<p style="font-size:20px" class="bodytext">&nbsp;</p>
-<p style="font-size:20px; color:green" class="bodytext">Conference Publications
-</p>
-</p>
-<p style="font-size:20px" class="bodytext">
-Pamplona, D; Manzanera A.; <a
-href="https://hal.archives-ouvertes.fr/hal-03012909/document/" title="Opens external link in new window" target="_blank"class="external-link-new-window">
-Naturally Constrained Online Expectation Maximization</a></i>,International Conference on Pattern Recognition (ICPR), 2020 <a href="./dataWebsite/Pamplona_Manzanera_Naturally_Constrained_Online_Expectation_Maximization_Poster.pdf" download>Poster</a>
-</p>
 
+<p>Pamplona, D.; Bernardino, A.; <a href="http://ieeexplore.ieee.org/document/5379575/" title="Opens external link in new window" target="_blank"class="external-link-new-window">Smooth Foveal Vision with Gaussian Receptive Fields</a></i>, 9th IEEE - RAS International Conference on Humanoids Robots, 2009
 </p>
-<p style="font-size:20px" class="bodytext">Pamplona, D.; Bernardino, A.; <a href="http://ieeexplore.ieee.org/document/5379575/" title="Opens external link in new window" target="_blank"class="external-link-new-window">Smooth Foveal Vision with Gaussian Receptive Fields</a></i>, 9th IEEE - RAS International Conference on Humanoids Robots, 2009
-
-</p>
-<p style="font-size:20px" class="bodytext">&nbsp;</p>
-<p style="font-size:20px; color:green" class="bodytext">Conference Abstracts
-</p>
+</div>
 
 
-<p style="font-size:20px" class="bodytext">Pamplona, D.; Manzanera A.; Uncertainty driven gaze selection, European Conference on Eye Movements (oral presentation), 2022 
+<div id="Abstracts">
+</p>
+<p>&nbsp;</p>
+<p style="font-size:20px; color:green" class="bodytext">Abstracts
 </p>
 
-<p style="font-size:20px" class="bodytext">Pamplona, D.; Manzanera A.; Naturally Constrained Online Expectation Maximization, Conférence sur l'Apprentissage automatique, 2021
+<p>Pamplona, D.; Manzanera A.; Uncertainty driven gaze selection, European Conference on Eye Movements (oral presentation), 2022 
 </p>
 
-<p style="font-size:20px" class="bodytext">Cessac, B.; Kornprobst, P.; Kraria, S.; Nasser, H.; Pamplona, D.; Portelli, G.; Vieville T.; ENAS: A new software for spike train analysis and simulation, Bernstein Conference 2016
+<p>Pamplona, D.; Manzanera A.; Naturally Constrained Online Expectation Maximization, Conférence sur l'Apprentissage automatique, 2021
 </p>
 
-<p style="font-size:20px" class="bodytext">Hilgen, G.; Softley, S.; Pamplona, D.; Kornprobst, P.; Cessac, B.; Sernagor, E.; The effect of retinal GABA Depletion by Allylglycine on mouse retinal ganglion cell responses to light</i>, European Retina Meeting, 2015
+<p>Cessac, B.; Kornprobst, P.; Kraria, S.; Nasser, H.; Pamplona, D.; Portelli, G.; Vieville T.; ENAS: A new software for spike train analysis and simulation, Bernstein Conference 2016
 </p>
-<p style="font-size:20px" class="bodytext">Pamplona, D.; Hilgen, G.; Cessac, B.; Sernagor, E.; Kornprobst, P.; A super-resolution approach for receptive fields estimation of neuronal ensembles, 24th Annual Computational Neuroscience Meeting (CNS), 2015
+
+<p>Hilgen, G.; Softley, S.; Pamplona, D.; Kornprobst, P.; Cessac, B.; Sernagor, E.; The effect of retinal GABA Depletion by Allylglycine on mouse retinal ganglion cell responses to light</i>, European Retina Meeting, 2015
 </p>
-<p style="font-size:20px" class="bodytext">Pamplona, D.; Cessac, B.; Kornprobst, P.; Shifting stimulus for faster receptive fields estimation of ensembles of neurons, Computational and Systems Neuroscience (Cosyne), 2015
+
+<p>Pamplona, D.; Hilgen, G.; Cessac, B.; Sernagor, E.; Kornprobst, P.; A super-resolution approach for receptive fields estimation of neuronal ensembles, 24th Annual Computational Neuroscience Meeting (CNS), 2015
 </p>
-<p style="font-size:20px" class="bodytext">Pamplona, D.; Triesch, J.; Rothkopf,C.; Eye's imaging process explains ganglion cells anisotropies, Computational and Systems Neuroscience (Cosyne), 2013
+
+<p>Pamplona, D.; Cessac, B.; Kornprobst, P.; Shifting stimulus for faster receptive fields estimation of ensembles of neurons, Computational and Systems Neuroscience (Cosyne), 2015
 </p>
-<p style="font-size:20px" class="bodytext">Pamplona, D.; Triesch, J.; Rothkopf,C.; The statistics of looking: Deriving properties of retinal ganglion cells across the visual field, 12th Annual meeting of the Vision Sciences Society, 2012 (oral presentataion)
+
+<p>Pamplona, D.; Triesch, J.; Rothkopf,C.; Eye's imaging process explains ganglion cells anisotropies, Computational and Systems Neuroscience (Cosyne), 2013
 </p>
-<p style="font-size:20px" class="bodytext">Pamplona, D.; Triesch, J.; Rothkopf,C.; Predicting Ganglion Cells Variability, Computational and Systems Neuroscience (Cosyne), 2011 
+
+<p>Pamplona, D.; Triesch, J.; Rothkopf,C.; The statistics of looking: Deriving properties of retinal ganglion cells across the visual field, 12th Annual meeting of the Vision Sciences Society, 2012 (oral presentataion)
 </p>
-<p style="font-size:20px" class="bodytext">Pamplona, D.; Triesch, J.; Rothkopf,C.; Edge and image statistics across the visual field, Bernstein Conference, 2011
+
+<p>Pamplona, D.; Triesch, J.; Rothkopf,C.; Predicting Ganglion Cells Variability, Computational and Systems Neuroscience (Cosyne), 2011 
 </p>
-<p style="font-size:20px" class="bodytext">Pamplona, D.; Weber, C.; Triesch J.;Foveation with optimized receptive fields, Bernstein Conference, 2009 
+
+<p>Pamplona, D.; Triesch, J.; Rothkopf,C.; Edge and image statistics across the visual field, Bernstein Conference, 2011
 </p>
-<p style="font-size:20px" class="bodytext">Tushev G.; Liu, M.; Pamplona, D.; Bornschein, J.; Weber, C.; Triesch J.; Foveated Vision with FPGA Camera, Bernstein Conference, 2009 (demo)</p>
+
+<p>Pamplona, D.; Weber, C.; Triesch J.;Foveation with optimized receptive fields, Bernstein Conference, 2009 
+</p>
+
+<p>Tushev G.; Liu, M.; Pamplona, D.; Bornschein, J.; Weber, C.; Triesch J.; Foveated Vision with FPGA Camera, Bernstein Conference, 2009 (demo)</p>
 </i>
-</article>
-<article>
+<div>
+
+
+<div id="Teaching">
 <p style="font-size:20px; color:green" class="bodytext">Teaching
 </p>
-<p style="font-size:20px" class="bodytext">Since 2017, I am teaching several classes, namely: Introduction to Matlab,
+<p>Since 2017, I am teaching several classes, namely: Introduction to Matlab,
 Visual Perception and Learning, Probabilities and Statistics III,
-Neuro-computational Models of Vision. 
+Neuro-computational Models of Vision, Signal Processing, Methods Data and Algorithms.
 </p>
-</article>
+</div>
 
-<article>
-<p style="font-size:20px; color:green" class="bodytext">Possible Projects
+<div id="Projects">
+<p style="font-size:20px; color:green" class="bodytext">Projects
 </p>
+
+Below is a list of possible short-term projects. This list is not exhaustive, it can be adapted to the collaborator interests and availability. 
 <style>
 	.demo {
 		border:1px solid #C0C0C0;
@@ -263,57 +362,59 @@ Neuro-computational Models of Vision.
 		<td>Computer Vision</td>
 		<td>Incremental, unsupervised learning; image contexts</td>
 		<td>Machine Learning; Computer Vision; Applied Math;Probabilistics and Statistics</td>
-		<td>min: 10 weeks max 6months</td>
-	</tr>
-	<tr>
-		<td>Fisher info based gaze in natural images</td>
-		<td>Eye movements; Computational Neuroscience</td>
-		<td>Active vision; Fisher info</td>
-		<td>Cognitive science, Vision,Machine Learning,</td>
-		<td>min: 3 months, max: 1year</td>
+		<td>min: 10 weeks max: 6 months</td>
 	</tr>
 	<tr>
 		<td>Truncated online Expectation Maximization</td>
 		<td>Machine Learning</td>
 		<td>Unsupervised online ML</td>
 		<td>Applied Math, Machine Learning</td>
-		<td>min: 10 weeks max 6months</td>
+		<td>min: 10 weeks max: 6 months</td>
 	</tr>
 	<tr>
 		<td>Pan retinal analysis of the aging impact of mouse RFs </td>
 		<td>Computational Neuroscience; </td>
 		<td>Reverse correlation; data analysis;  fitting; visualization</td>
 		<td>Machine Learning; Biology; Neuroscience; </td>
-		<td>min 10 weeks max 3 months</td>
+		<td>min: 10 weeks max: 3 months</td>
 	</tr>
 	<tr>
 		<td>Design and set up of a robot with dual cameras </td>
 		<td>Robotics, Middle ware</td>
 		<td><br></td>
 		<td>robotics, middle ware</td>
-		<td>min:3month max :6months</td>
+		<td>min: 3months max: 6months</td>
 	</tr>
 	<tr>
 		<td>On the consequences of Fisher Infomation Matrix diagonal approximation</td>
 		<td>Machine Learning/ probabilistics </td>
 		<td>FIM, computational time, approximation</td>
 		<td>Math, ML, engeneering</td>
-		<td>min:10 weeks max 6 months</td>
+		<td>min: 10 weeks max: 6 months</td>
 	</tr>
 	<tr>
-		<td>Benchmarking state of the art methods for indoor classification </td>
-		<td>Computer Vision</td>
-		<td>image classification, indoor, house places</td>
-		<td>Machine Learning; Computer Vision; Applied Mathematics; Probabilistics and Statistics</td>
-		<td>min: 10 weeks max 6months</td>
+		<td>Model human motion primitives from videos</td>
+		<td>Computer Vision </td>
+		<td>Machine Learning/ probabilistics</td>
+		<td> ML, engeneering</td>
+		<td>min: 4 months max: 1 year</td>
 	</tr>
+
 	</tbody>
 </table>
 
-</article>
+</div>
+
+
+</div>
+<!--
+
 <footer>
 Last Update: 10/02/2021
 </footer>
+
+
+-->
 </body>
 
 
